@@ -1,5 +1,9 @@
 export const navElements = [
   {
+    name: "home",
+    url: "/",
+  },
+  {
     name: "posts",
     url: "/posts",
   },
