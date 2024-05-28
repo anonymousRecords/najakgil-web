@@ -7,7 +7,7 @@ type ListItemProps = {
   post: Post;
 };
 
-function ListItem({ post }: ListItemProps) {
+export default function ListItem({ post }: ListItemProps) {
   const { id, title, description, category } = post;
   return (
     <Link
@@ -15,7 +15,7 @@ function ListItem({ post }: ListItemProps) {
       href={`/posts/${id}`}
     >
       <div className="flex flex-1 flex-col">
-        <h3 className="text-[22px] font-semibold">{title}</h3>
+        <h3 className="text-[18px] font-semibold xl:text-[22px]">{title}</h3>
         <p className="mt-3 text-[16px] text-[#868b94]">{description}</p>
       </div>
       <div className="flex items-end md:ml-4 md:justify-end">
@@ -24,5 +24,3 @@ function ListItem({ post }: ListItemProps) {
     </Link>
   );
 }
-
-export default ListItem;
