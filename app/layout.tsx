@@ -15,8 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Navbar />
-      <body className="mt-20 bg-[#2294FF]">{children}</body>
+      <body className="bg-[#2294FF]">
+        <Navbar />
+        <div className="mt-[120px]">{children}</div>
+      </body>
     </html>
   );
 }

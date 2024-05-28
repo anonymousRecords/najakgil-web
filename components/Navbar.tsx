@@ -6,11 +6,10 @@ import { usePathname } from "next/navigation";
 
 function Navbar() {
   const searchParams = usePathname();
-  console.log(searchParams);
 
   return (
     <nav className="fixed right-0 top-0 w-full bg-[#2294FF] py-8 md:px-20">
-      <div className="prose prose-xl flex justify-end gap-4 text-4xl text-white sm:justify-end lg:text-5xl">
+      <div className="sm: prose prose-xl flex items-center justify-end gap-10 px-8 text-lg text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
         {navElements.map((element) => (
           <Link
             key={element.name}
