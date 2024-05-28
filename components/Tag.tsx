@@ -6,7 +6,7 @@ type TagProps = {
 
 function Tag({ tag }: TagProps) {
   return (
-    <div className="mt-6 h-7 rounded-full bg-gray-200 px-2.5 py-1 text-sm text-gray-500">
+    <div className="flex h-5 items-center rounded-full bg-gray-200 px-2.5 py-1 text-[12px] text-gray-500 xl:h-7 xl:text-sm">
       {tag}
     </div>
   );
