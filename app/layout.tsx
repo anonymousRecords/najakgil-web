@@ -14,10 +14,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-[#2294FF]">
+    <html lang="en" style={{ height: "100%" }}>
+      <body
+        className="bg-[#2294FF]"
+        style={{ height: "100%", overflow: "hidden" }}
+      >
         <Navbar />
-        <div className="mt-[120px]">{children}</div>
+        <div
+          className="mt-[120px]"
+          style={{ height: "calc(100% - 120px)", overflowY: "auto", paddingTop: "20px"}}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
