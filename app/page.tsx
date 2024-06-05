@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import { CharacterElement } from "@/public";
@@ -8,7 +8,16 @@ import { CharacterElement } from "@/public";
 const SNOWFLAKE_COUNT = 15;
 
 const Home = () => {
+  const [snowflakeSizes, setSnowflakeSizes] = useState<number[]>([]);
   useEffect(() => {
+    // 모바일 디바이스 여부 확인
+    const isMobile = window.innerWidth <= 768;
+    // 눈송이 크기 랜덤 설정
+    const sizes = Array.from({ length: SNOWFLAKE_COUNT }).map(
+      () => Math.random() * (isMobile ? 300 : 500) + 100,
+    );
+    setSnowflakeSizes(sizes);
+
     const snowflakes = document.querySelectorAll(".snowflake");
     snowflakes.forEach((snowflake) => {
       animateSnowflake(snowflake);
@@ -19,9 +28,9 @@ const Home = () => {
     // 눈송이가 화면을 가로지르는데 걸리는 시간
     const duration = Math.random() * 10 + 5;
     // 눈송이가 화면 위에서 아래로 떨어지는데 걸리는 시간
-    const fallDuration = Math.random() * 8 + 5; 
+    const fallDuration = Math.random() * 8 + 5;
     // 눈송이가 화면에 처음 등장하는 시간을 결정
-    const delay = Math.random() * -15; 
+    const delay = Math.random() * -15;
 
     gsap.to(snowflake, {
       duration,
@@ -47,10 +56,7 @@ const Home = () => {
   const characterElements = Object.values(CharacterElement);
 
   const snowflakes = Array.from({ length: SNOWFLAKE_COUNT }).map((_, index) => {
-    // 모바일 디바이스 여부 확인
-    const isMobile = window.innerWidth <= 768;
-    // 눈송이 크기 랜덤 설정
-    const size = Math.random() * (isMobile ? 300  : 500) + 100;
+    const size = snowflakeSizes[index] || 100;
     return (
       <Image
         key={index}
@@ -58,7 +64,7 @@ const Home = () => {
         src={characterElements[index % characterElements.length]}
         alt={`snowflake-${index}`}
         style={{
-          pointerEvents: 'none',
+          pointerEvents: "none",
           // 랜덤한 위치에 눈송이 생성
           left: `${Math.random() * 100}vw`,
           top: `${Math.random() * -600}px`,
