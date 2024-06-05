@@ -47,8 +47,10 @@ const Home = () => {
   const characterElements = Object.values(CharacterElement);
 
   const snowflakes = Array.from({ length: SNOWFLAKE_COUNT }).map((_, index) => {
-    // 사이즈 랜덤하게 설정
-    const size = Math.random() * 500 + 100;
+    // 모바일 디바이스 여부 확인
+    const isMobile = window.innerWidth <= 768;
+    // 눈송이 크기 랜덤 설정
+    const size = Math.random() * (isMobile ? 300  : 500) + 100;
     return (
       <Image
         key={index}

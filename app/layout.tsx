@@ -22,7 +22,11 @@ export default function RootLayout({
         <Navbar />
         <div
           className="mt-[120px]"
-          style={{ height: "calc(100% - 120px)", overflowY: "auto", paddingTop: "20px"}}
+          style={{
+            paddingTop: "20px",
+            overflowY: "scroll",
+            height: "calc(100% - 120px)",
+          }}
         >
           {children}
         </div>
