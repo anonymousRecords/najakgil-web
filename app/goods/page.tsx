@@ -1,5 +1,5 @@
 import GoodsItem from "@/components/GoodsItem";
-import { GoodsElement } from "@/public";
+import { GoodsElement } from "@/constants";
 import React from "react";
 
 function Goods() {

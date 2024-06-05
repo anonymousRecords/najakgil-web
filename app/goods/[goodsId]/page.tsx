@@ -1,7 +1,8 @@
 "use client";
 import NotFound from "@/app/NotFound";
 import Tag from "@/components/Tag";
-import { GoodsElement } from "@/public";
+import { GoodsElement } from "@/constants";
+
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
