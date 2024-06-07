@@ -22,6 +22,7 @@ export default function GoodsItem({ goods }: GoodsItemProps) {
         alt={id}
         width={550}
         height={0}
+        unoptimized
         style={{
           objectFit: "fill",
           aspectRatio: "16/9",
