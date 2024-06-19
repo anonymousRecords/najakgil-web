@@ -4,8 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "najakgil blog",
+  title: "나작길 블로그",
   description: "Welcome to Najakgil Blog",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
